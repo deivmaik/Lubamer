@@ -2,10 +2,12 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
+   
 }
 
 body {
@@ -14,6 +16,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     line-height: 1.2;
+    
 }
 
 a, a:visited, a:hover {
@@ -34,5 +37,20 @@ a, a:visited, a:hover {
 
     &-ai-c {
         align-items: center;
+    }
+}
+
+
+// Visibility 
+
+.hide-for-mobile {
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large){
+        display: none;
     }
 }

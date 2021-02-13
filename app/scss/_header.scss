@@ -1,216 +1,158 @@
 
 .header {
+    background-color: $mainBackground;
+    nav {
+        padding: 2.5rem;
+    }
 
-     &__logo {
+    &__logo {
 
         >img {
             max-width: 10rem;
             height: auto;
         }
     }
+    
+    // Mobile Menu Starts 
 
-    &__menu {
-        // Mobile Menu 
-        
-    body {
-    background: $mainBackground;
-  }
-  
-  nav {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    top: 40%;
-    left: 0;
-    margin:  0 auto;
-  
-    a {
-      display: inline-block;
-      position: relative;
-      text-align: center;
-      color: $golden;
-      text-decoration: none;
-      font-size: 20px;
-      overflow: hidden;
-      top: 5px;
-      
-      &:after {
-        content: '';
-        position: absolute;
-        background: $mainBackground;
-        height: 2px;
-        width: 0%;
-        transform: translateX(-50%);
-        left: 50%;
-        bottom: 0;
-        transition: .35s ease;
-      }
-      &:hover:after,
-      &:focus:after,
-      &:active:after {
-        width: 100%;
-      }
-    }
-  }
-  
-  .button__container {
-    position: fixed;
-    top: 5%;
-    right: 2%;
-    height: 27px;
-    width: 35px;
-    cursor: pointer;
-    z-index: 100;
-    transition: opacity .25s ease;
-    
-    &:hover {
-      opacity: .7;
-    }
-    
-    &.active {
-      .top {
-        transform: translateY(11px) translateX(0) rotate(45deg);
-        background: $darkerGolden;
-      }
-      .middle {
-        opacity: 0;
-        background: $darkerGolden;
-      }
-      
-      .bottom {
-        transform: translateY(-11px) translateX(0) rotate(-45deg);
-        background: $darkerGolden;
-      }
-    }
-    
-    span {
-    background: $mainBackground;
-    border: none;
-    height: 5px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition:  all .35s ease;
-    cursor: pointer;
-      
-      &:nth-of-type(2) {
-        top: 11px;
-      }
-      
-      &:nth-of-type(3) {
-        top: 22px;
-      }
-    }
-  }
-  
-  .overlay {
-    position: fixed;
-    background: $darkerGolden;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .35s, visibility .35s, height .35s;
-    overflow: hidden;
-    
-    &.open {
-      opacity: .9;
-      visibility: visible;
-      height: 100%;
-      
-      li {
-        animation: fadeInRight .5s ease forwards;
-        animation-delay: .35s;
-        
-        &:nth-of-type(2) {
-          animation-delay: .4s;
-        }
-        &:nth-of-type(3) {
-          animation-delay: .45s;
-        }
-        &:nth-of-type(4) {
-          animation-delay: .50s;
-        }
-      }
-    }
-    nav {
-      position: relative;
-      height: 70%;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 50px;
-      font-weight: 400;
-      text-align: center;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: inline-block;
-      position: relative;
-      height: 100%; 
-      
-      li {
-        display: block;
-        height: 25%;
-        height: calc(100% / 4);
-        min-height: 50px;
-        position: relative;
-        opacity: 0;
-        
-        a {
-          display: block;
-          position: relative;
-          color: $white;
-          text-decoration: none;
-          overflow: hidden;
-          
-          &:hover:after,
-           &:focus:after,
-           &:active:after {
-             width: 100%;
-           }
-          
-          &:after {
-            content: '';
+    &__navigation {
+
+        // The following is for the menu that will cover the whole screen 
+        &--mobile-menu{
+            width: 100%;
+            height: 100%;
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0%;
-            transform: translateX(-50%);
-            height: 3px;
-            background: $white;
-            transition: .35s;
-          }
-        }
-      }
-    }
-  }
-  
-  @keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      left: 20%;
-    }
-    100% {
-      opacity: 1;
-      left: 0;
-    }
-  }
-    }
+            top: 0;
+            left: 0;
+            background-color: $mainBackground;
+            z-index: 2;
+            transition: scale(0);
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            & ul {
+                opacity: 0;
+                transform: scale(0);
+                transform: all 0.5s ease-in-out;
+                padding-left: 0;
+                line-height: 5rem;
+                
+
+                & li {
+                    list-style: none;
+
+                    & a {
+                        color: $darkerGrey;
+                        display: block;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 1rem 1rem;
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        & input {
+            display: none;
+            // This hides the checkbox 
+    
+    
+            // The next actions are to happen in the future, I am just calling them before to avoid doble code
+            &:checked ~ .header__menu__icon >.bar {
+                background: transparent;
+                // This vanishes the middle bar
+    
+                // These two turn the lines into an X 
+                &::before {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+    
+                &::after {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+            &:checked~ .header__navigation--mobile-menu{
+                opacity: 1;
+                transform: scale(1);
+                
+
+                & >ul{
+                    opacity: 1;
+                    transform: scale(1);
+                    transition-delay: 0.1s;
+                }
+            }
+        } 
+        
+        
+    }
+    
+    &__menu {
+        // Hamburger
+        &__icon{
+            background-color: $mainBackground;
+            position: fixed;
+            top: 3rem;
+            right: 3rem;
+            padding: 2rem 1rem;
+            z-index: 3;
+
+            
+
+            // This represents the first line of the hamburger menu 
+            & >.bar{
+              width: 2.8rem;
+              height: 0.3rem;
+              background-color: $white;
+              display: block;
+              position: relative;
+              transition: all 0.3s ease-out; 
+              
+              // This is the second line using a psuedo class 
+
+                &::before {
+                    content: " ";
+                    width: 2.8rem;
+                    height: 0.3rem;
+                    background-color: $white;
+                    position: absolute;
+                    top: -0.8rem;
+                    left: 0;
+                    transition: all 0.3s;
+                }
+
+                // This is the third line
+                &::after {
+                    content: " ";
+                    width: 2.8rem;
+                    height: 0.3rem;
+                    background-color: $white;
+                    position: absolute;
+                    top: 0.8rem;
+                    left: 0;
+                    transition: all 0.3s;
+                }
+            }   
+        }
+    }  
+    // Mobile Menu Ends
+
+    // Desktop Menu starts
+    
     &__links {
 
         a {
-
-
+            font-size: $font-small;
+            color: $grey;
         }
     }
 }   
-
-
-

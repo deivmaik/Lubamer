@@ -21,21 +21,33 @@
             <a href="#" class="header__logo">
                 <img src="/img/logo.svg" alt="Logo de Lubamer">
             </a>
-            <a href="#" class="header__menu">
-                <!-- These spans are for the lines of the hamburger menu -->
-                <span></span>
-                <span></span>
-                <span></span>
 
-                <div class="header__links">
-                    <a href="#">Nosotros</a>
-                    <a href="#">Certificaciones</a>
-                    <a href="#">Productos</a>
-                    <a href="#">Quality Supreme</a>
-                    <a href="#">Contacto</a>
+            <div class="header__navigation hide-for-desktop ">
+                <!-- This div is for the mobile navigation menu  -->
+                <input type="checkbox" name="checkbox" id="hamburger" class="header__menu--mobile">
+                <label for="hamburger" class="header__menu__icon">
+                    <span class="bar"></span>
+                </label>
 
+                <div class="header__navigation--mobile-menu">
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Certificaciones</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Quality Supreme</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
                 </div>
-            </a>
+            </div>
+
+            <div class="header__links hide-for-mobile">
+                <a href="#">Nosotros</a>
+                <a href="#">Certificaciones</a>
+                <a href="#">Productos</a>
+                <a href="#">Quality Supreme</a>
+                <a href="#">Contacto</a>
+            </div>
+
         </nav>
     </header>
 
