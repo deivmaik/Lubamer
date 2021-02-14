@@ -17,29 +17,22 @@
 <body>
 
     <header class="header">
-        <nav class="flex flex-jc-sb flex-ai-c">
+        <div class="overlay hide-for-desktop has-fade"></div>
+        <nav class=" container flex flex-jc-sb flex-ai-c">
             <a href="#" class="header__logo">
                 <img src="/img/logo.svg" alt="Logo de Lubamer">
             </a>
+            <!-- Mobile menu starts -->
+            <a href="#" id="btnHamburger" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
 
-            <div class="header__navigation hide-for-desktop ">
-                <!-- This div is for the mobile navigation menu  -->
-                <input type="checkbox" name="checkbox" id="hamburger" class="header__menu--mobile">
-                <label for="hamburger" class="header__menu__icon">
-                    <span class="bar"></span>
-                </label>
+            <!-- Mobile menu ends -->
 
-                <div class="header__navigation--mobile-menu">
-                    <ul>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Certificaciones</a></li>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Quality Supreme</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
 
+            <!-- Desktop menu starts -->
             <div class="header__links hide-for-mobile">
                 <ul>
                     <li><a href="#" data-hover="Nosotros">Nosotros</a> </li>
@@ -47,12 +40,24 @@
                     <li><a href="#" data-hover="Productos">Productos</a></li>
                     <li><a href="#" data-hover="Quality Supreme">Quality Supreme</a></li>
                     <li><a href="#" data-hover="Contacto">Contacto</a></li>
+                    <li><a href="#" data-hover="es | en">es | en</a></li>
+
                 </ul>
             </div>
-
-
+            <!-- Desktop menu ends  -->
 
         </nav>
+
+        <!-- Mobile menu dropdown menu start -->
+        <div class="header__menu">
+            <a href="#">Nosotros</a>
+            <a href="#">Certificaciones</a>
+            <a href="#">Productos</a>
+            <a href="#">Quality Supreme</a>
+            <a href="#">Contacto</a>
+            <a href="#">es | en</a>
+        </div>
+        <!-- Mobile menu dropdown menu end -->
     </header>
 
     <script src="/app/js/script.js"></script>

@@ -7,6 +7,80 @@ button, button {
   font-weight: bold;
 }
 
+.has-fade {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 350ms ease-in-out forwards;
+          animation: fade-in 350ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 350ms ease-in-out forwards;
+          animation: fade-out 350ms ease-in-out forwards;
+}
+
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
@@ -25,6 +99,10 @@ body {
   font-size: 1.4rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+body.noscroll {
+  overflow: hidden;
 }
 
 a, a:visited, a:hover {
@@ -76,144 +154,98 @@ button, button {
   }
 }
 
+.container {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .header {
   background-color: #0F0F0F;
 }
 
-.header nav {
-  padding: 2rem 2.5rem;
+.header.open .header__toggle > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
-.header__logo > img {
-  max-width: 12.5rem;
-  height: auto;
+.header.open .header__toggle > span:nth-child(2) {
+  opacity: 0;
 }
 
-.header__navigation--mobile-menu {
-  width: 100%;
-  height: 100%;
+.header.open .header__toggle > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header__menu {
+  z-index: 3;
+  background: transparent;
+  padding: 2.6rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #0F0F0F;
-  z-index: 2;
-  -webkit-transition: scale(0);
-  transition: scale(0);
-  opacity: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: calc(100% - 5rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 20%;
 }
 
-.header__navigation--mobile-menu ul {
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transform: all 0.5s ease-in-out;
-          transform: all 0.5s ease-in-out;
-  padding-left: 0;
-  line-height: 5rem;
-}
-
-.header__navigation--mobile-menu ul li {
-  list-style: none;
-}
-
-.header__navigation--mobile-menu ul li a {
-  color: #4A4A51;
+.header__menu a {
   display: block;
+  color: #FFFFFF;
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  padding: 1rem 1rem;
-  position: relative;
+  padding: 2rem 2rem;
 }
 
-.header__navigation input {
+.header .overlay {
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #0F0F0F;
+}
+
+.header .overlay .fade-in {
+  display: block;
+}
+
+.header .overlay .fade-out {
   display: none;
 }
 
-.header__navigation input:checked ~ .header__menu__icon > .bar {
-  background: transparent;
+.header__toggle {
+  z-index: 2;
 }
 
-.header__navigation input:checked ~ .header__menu__icon > .bar::before {
-  top: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.header__navigation input:checked ~ .header__menu__icon > .bar::after {
-  top: 0;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.header__navigation input:checked ~ .header__navigation--mobile-menu {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.header__navigation input:checked ~ .header__navigation--mobile-menu > ul {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-}
-
-.header__menu__icon {
-  background-color: #0F0F0F;
-  position: fixed;
-  top: 3rem;
-  right: 3rem;
-  padding: 2rem 1rem;
-  z-index: 3;
-}
-
-.header__menu__icon > .bar {
-  width: 2.8rem;
-  height: 0.3rem;
-  background-color: #FFFFFF;
+.header__toggle > span {
   display: block;
-  position: relative;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: #909095;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform-origin: 0.25rem 0.1rem;
+          transform-origin: 0.25rem 0.1rem;
 }
 
-.header__menu__icon > .bar::before {
-  content: " ";
-  width: 2.8rem;
-  height: 0.3rem;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: -0.8rem;
-  left: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.header__toggle > span:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
-.header__menu__icon > .bar::after {
-  content: " ";
-  width: 2.8rem;
-  height: 0.3rem;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: 0.8rem;
-  left: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.header nav {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.header__logo > img {
+  max-width: 12.5rem;
+  height: auto;
 }
 
 .header__links > ul {
@@ -237,6 +269,7 @@ button, button {
 
 .header__links a::before {
   position: absolute;
+  left: 0;
   bottom: 0;
   display: block;
   height: 0.25rem;
@@ -245,6 +278,11 @@ button, button {
   background-color: #F4D38B;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.header__links a:hover::before {
+  opacity: 1;
+  width: 100%;
 }
 
 .header__links a::after {
@@ -257,11 +295,6 @@ button, button {
   overflow: hidden;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-}
-
-.header__links a:hover::before {
-  opacity: 1;
-  width: 100%;
 }
 
 .header__links a:hover::after {

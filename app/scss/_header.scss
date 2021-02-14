@@ -1,8 +1,97 @@
 
 .header {
     background-color: $mainBackground;
+    
+    // Mobile menu starts 
+    &.open {
+        
+        .header__toggle {
+            // This is for when its active so it transforms into an X 
+        > span:first-child {
+            transform: rotate(45deg);
+        }
+
+        > span:nth-child(2) {
+            opacity: 0;
+        }
+
+        > span:last-child {
+            transform: rotate(-45deg)
+        }
+        }
+    }
+
+    // Mobile dropdown menu starts 
+    &__menu {
+        z-index: 3;
+        background: transparent;
+        padding: 2.6rem;
+        position: absolute;
+        width: calc(100% - 5rem);
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20%;
+
+
+        a {
+            display: block;
+            color: $white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            padding: 2rem 2rem;
+            
+        }
+    }
+
+    // Mobile dropdown menu ends 
+
+    .overlay {
+        opacity: 0;
+        z-index: 1;
+        position:fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $mainBackground;
+
+        & .fade-in {
+            // the display has to be block for the animation to work 
+            display: block;
+        }
+
+        & .fade-out {
+            display: none;
+        }
+    }
+
+    &__toggle {
+        z-index: 2;
+        >span {
+            display: block;
+            width: 2.5rem;
+            height: 0.2rem;
+            background-color: $grey;
+            transition: all 250ms ease-in-out;
+            transform-origin: 0.25rem 0.1rem;
+            // transform origin is for the effect of turning it into an X 
+    
+            &:not(:last-child){
+                // This adds a margin bottom to all the spans except the last one 
+                margin-bottom: 0.5rem;
+            }
+        }
+         
+    }
+    // Desktop Menu starts
+
     nav {
-        padding: 2rem 2.5rem
+        padding-top: 2rem ;
+        padding-bottom: 2rem 
+
     }
 
     &__logo {
@@ -12,142 +101,7 @@
             height: auto;
         }
     }
-    
-    // Mobile Menu Starts 
 
-    &__navigation {
-
-        // The following is for the menu that will cover the whole screen 
-        &--mobile-menu{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: $mainBackground;
-            z-index: 2;
-            transition: scale(0);
-            opacity: 0;
-            transition: 0.3s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            & ul {
-                opacity: 0;
-                transform: scale(0);
-                transform: all 0.5s ease-in-out;
-                padding-left: 0;
-                line-height: 5rem;
-                
-
-                & li {
-                    list-style: none;
-
-                    & a {
-                        color: $darkerGrey;
-                        display: block;
-                        font-size: 2rem;
-                        font-weight: bold;
-                        text-transform: uppercase;
-                        text-decoration: none;
-                        text-align: center;
-                        padding: 1rem 1rem;
-                        position: relative;
-                    }
-                }
-            }
-        }
-
-        & input {
-            display: none;
-            // This hides the checkbox 
-    
-    
-            // The next actions are to happen in the future, I am just calling them before to avoid doble code
-            &:checked ~ .header__menu__icon >.bar {
-                background: transparent;
-                // This vanishes the middle bar
-    
-                // These two turn the lines into an X 
-                &::before {
-                    top: 0;
-                    transform: rotate(45deg);
-                }
-    
-                &::after {
-                    top: 0;
-                    transform: rotate(-45deg);
-                }
-            }
-            &:checked~ .header__navigation--mobile-menu{
-                opacity: 1;
-                transform: scale(1);
-                
-
-                & >ul{
-                    opacity: 1;
-                    transform: scale(1);
-                    transition-delay: 0.1s;
-                }
-            }
-        } 
-        
-        
-    }
-    
-    &__menu {
-        // Hamburger
-        &__icon{
-            background-color: $mainBackground;
-            position: fixed;
-            top: 3rem;
-            right: 3rem;
-            padding: 2rem 1rem;
-            z-index: 3;
-
-            
-
-            // This represents the first line of the hamburger menu 
-            & >.bar{
-              width: 2.8rem;
-              height: 0.3rem;
-              background-color: $white;
-              display: block;
-              position: relative;
-              transition: all 0.3s ease-out; 
-              
-              // This is the second line using a psuedo class 
-
-                &::before {
-                    content: " ";
-                    width: 2.8rem;
-                    height: 0.3rem;
-                    background-color: $white;
-                    position: absolute;
-                    top: -0.8rem;
-                    left: 0;
-                    transition: all 0.3s;
-                }
-
-                // This is the third line
-                &::after {
-                    content: " ";
-                    width: 2.8rem;
-                    height: 0.3rem;
-                    background-color: $white;
-                    position: absolute;
-                    top: 0.8rem;
-                    left: 0;
-                    transition: all 0.3s;
-                }
-            }   
-        }
-    }  
-    // Mobile Menu Ends
-
-    // Desktop Menu starts
-    
     &__links {
 
         & >ul {
@@ -175,6 +129,10 @@
             &::before {
                  // This one is for the line that goes bellow it 
                 position: absolute;
+                left: 0;
+                // left: 50%;
+                // transform: translate(-50%, 0);
+                // In case I want it to start from the middle, the one above works 
                 bottom: 0;
                 display: block;
                 height: 0.25rem;
@@ -182,6 +140,10 @@
                 content: "";
                 background-color: $golden;
                 transition: all 0.5s ease;
+            }
+            &:hover::before {
+                opacity: 1;
+                width: 100%;
             }
 
             &::after {
@@ -196,14 +158,15 @@
                 transition: all 0.5s ease;
             }
 
-            &:hover::before {
-                opacity: 1;
-                width: 100%;
-            }
-
             &:hover::after {
                 max-width: 100%;
             }
         }
     }
+    // Desktop Ends
+
+    
+
 }   
+
+
