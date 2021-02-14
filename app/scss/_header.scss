@@ -2,13 +2,13 @@
 .header {
     background-color: $mainBackground;
     nav {
-        padding: 2.5rem;
+        padding: 2rem 2.5rem
     }
 
     &__logo {
 
         >img {
-            max-width: 10rem;
+            max-width: 12.5rem;
             height: auto;
         }
     }
@@ -151,8 +151,53 @@
     &__links {
 
         a {
+            position: relative;
             font-size: $font-small;
             color: $grey;
+            transition: all 350ms ease-in-out;
+
+            &:not(:last-child){
+                margin-right: 3.2rem;
+            }
+
+            &:before, &:after {
+
+            }
+
+            &:before {
+                position: absolute;
+                transition: all 0.35s ease;
+                bottom: 0;
+                display: block;
+                height: 5px;
+                width: 0%;
+                content: "";
+                background-color: #2980b9;
+
+        
+            }
+
+            &:after {
+                position: absolute;
+                transition: all 0.35s ease;
+                left: 0;
+                top: -0.4rem;
+                padding: 0.5em 0;
+                content: attr(data-hover);
+                color: #ffffff;
+                white-space: nowrap;
+                max-width: 0%;
+                overflow: hidden;
+            }
+
+            // &:hover:before {
+            //     opacity: 1;
+            //     width: 100%;
+            // }
+
+            &:hover:after {
+                max-width: 100%;
+            }
         }
     }
 }   
