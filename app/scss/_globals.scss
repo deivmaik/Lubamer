@@ -24,6 +24,10 @@ body {
     
 }
 
+h1, h2, h3 {
+    margin-top: 0 ;
+}
+
 a, a:visited, a:hover {
     text-decoration: none;
 }
@@ -48,15 +52,20 @@ a, a:visited, a:hover {
 
 // Buttons
 
-button, button {
+button, .button {
     padding: 1.4rem 3rem;
-    background-color: white;
-    border-radius: 5rem;
+    border: 0.2rem solid $golden;
+    border-radius: 1.5rem;
     cursor: pointer;
-    color: black;
-    font-weight: bold;
+    color: $golden;
+    font-weight: 400;
+    transition: all 300ms ease-in-out;
 
-
+    &:hover, :focus {
+        font-weight: bold;
+        background: $golden;
+        color: $mainBackground;
+    }
 }
 
 // Visibility 

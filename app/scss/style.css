@@ -105,6 +105,10 @@ body.noscroll {
   overflow: hidden;
 }
 
+h1, h2, h3 {
+  margin-top: 0;
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
 }
@@ -133,13 +137,21 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
-button, button {
+button, .button {
   padding: 1.4rem 3rem;
-  background-color: white;
-  border-radius: 5rem;
+  border: 0.2rem solid #F4D38B;
+  border-radius: 1.5rem;
   cursor: pointer;
-  color: black;
+  color: #F4D38B;
+  font-weight: 400;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+button:hover, button :focus, .button:hover, .button :focus {
   font-weight: bold;
+  background: #F4D38B;
+  color: #0F0F0F;
 }
 
 @media (max-width: 63.9375em) {
@@ -178,7 +190,7 @@ button, button {
 }
 
 .header__menu {
-  z-index: 3;
+  z-index: 2;
   background: transparent;
   padding: 2.6rem;
   position: absolute;
@@ -299,5 +311,79 @@ button, button {
 
 .header__links a:hover::after {
   max-width: 100%;
+}
+
+.hero {
+  background-color: #0F0F0F;
+  height: 100vh;
+}
+
+.hero__image {
+  position: relative;
+  height: 30%;
+  width: 100%;
+  margin-top: 5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 8rem;
+}
+
+.hero__image::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url("/img/pistonsReady.png");
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero__text {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.hero__text h1 {
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #F4D38B;
+  margin-bottom: 2.5rem;
+}
+
+.hero__text p {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: #909095;
+  margin-bottom: 7rem;
+}
+
+.hero__anchor {
+  display: block;
+  position: absolute;
+  bottom: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #0C0C0C;
+  -webkit-box-shadow: 0rem 0rem 0.4rem rgba(80, 80, 79, 0.16);
+          box-shadow: 0rem 0rem 0.4rem rgba(80, 80, 79, 0.16);
+  border: none;
+  border-radius: 50%;
+  text-decoration: none;
+  left: calc(50% - 1rem);
+}
+
+.hero__anchor span {
+  display: inline-block;
+  margin-top: 0.7rem;
+  margin-left: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 2.5rem;
+  background-image: url(/img/arrowDown.svg);
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,74 @@
+
+.hero {
+    background-color: $mainBackground;
+    height: 100vh;
+    &__image {
+        position: relative;
+        height: 30%;
+        width: 100%;
+        margin-top: 5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 8rem;
+
+        &::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-image: url('/img/pistonsReady.png');
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    &__text {
+        padding-top: 5rem;
+        text-align: center;
+
+        h1 {
+            font-weight: 400;
+            font-size: 3.5rem;
+            line-height: 1;
+            color: $golden;
+            margin-bottom: 2.5rem;
+        }
+
+        p {
+            padding-left: 5rem;
+            padding-right: 5rem;
+            line-height: 1.5;
+            font-size: $font-small;
+            color: $grey;
+            margin-bottom: 7rem;
+        }
+
+    }
+
+    &__anchor {
+        display: block;
+        position: absolute;
+        bottom: 2rem;
+        width: 3.5rem;
+        height: 3.5rem;
+       
+        background-color: $secondBackground;
+        box-shadow: 0rem 0rem 0.4rem rgba(80, 80, 79, 0.16);
+        border: none;
+        border-radius: 50%;
+        text-decoration: none;
+        left: calc(50% - 1rem);
+
+        & span{
+            display: inline-block;
+            margin-top: 0.7rem;
+            margin-left: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 2.5rem;
+            background-image: url(/img/arrowDown.svg);
+        }
+    }
+}
