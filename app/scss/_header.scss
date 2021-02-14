@@ -150,52 +150,58 @@
     
     &__links {
 
-        a {
-            position: relative;
-            font-size: $font-small;
-            color: $grey;
-            transition: all 350ms ease-in-out;
-
-            &:not(:last-child){
-                margin-right: 3.2rem;
-            }
-
-            &:before, &:after {
-
-            }
-
-            &:before {
-                position: absolute;
-                transition: all 0.35s ease;
-                bottom: 0;
-                display: block;
-                height: 5px;
-                width: 0%;
-                content: "";
-                background-color: #2980b9;
+        & >ul {
+            list-style-type: none;
+            
+            & >li {
+                display: inline-block;
+                list-style: outside none none;
+                margin: 0 1.5em;
+                padding: 0;
+             }
+        }
 
         
+
+        a {
+            padding: 0.5em 0;
+            color: $grey;
+            position: relative;
+            letter-spacing: 0.1rem;
+            text-decoration: none;
+
+            
+
+            &::before {
+                 // This one is for the line that goes bellow it 
+                position: absolute;
+                bottom: 0;
+                display: block;
+                height: 0.25rem;
+                width: 0%;
+                content: "";
+                background-color: $golden;
+                transition: all 0.5s ease;
             }
 
-            &:after {
+            &::after {
+                // This one is for the text 
                 position: absolute;
-                transition: all 0.35s ease;
                 left: 0;
-                top: -0.4rem;
-                padding: 0.5em 0;
                 content: attr(data-hover);
-                color: #ffffff;
+                color: $golden;
                 white-space: nowrap;
                 max-width: 0%;
                 overflow: hidden;
+                transition: all 0.5s ease;
             }
 
-            // &:hover:before {
-            //     opacity: 1;
-            //     width: 100%;
-            // }
+            &:hover::before {
+                opacity: 1;
+                width: 100%;
+            }
 
-            &:hover:after {
+            &:hover::after {
                 max-width: 100%;
             }
         }
