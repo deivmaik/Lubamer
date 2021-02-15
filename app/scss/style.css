@@ -109,6 +109,12 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
+@media (min-width: 64em) {
+  h1 h1, h2 h1, h3 h1 {
+    font-size: 2.2rem;
+  }
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
 }
@@ -149,7 +155,7 @@ button, .button {
 }
 
 button:hover, button :focus, .button:hover, .button :focus {
-  font-weight: bold;
+  font-weight: 400;
   background: #F4D38B;
   color: #0F0F0F;
 }
@@ -167,8 +173,41 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .container {
-  padding-left: 2.5rem;
+  max-width: 111rem;
+  margin: 0 auto;
+}
+
+.container--pall {
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem;
   padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.container--py {
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem;
+}
+
+.container--px {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.container--pt {
+  padding-top: 3.6rem;
+}
+
+.container--pr {
+  padding-bottom: 3.6rem;
+}
+
+.container--pb {
+  padding-right: 2.5rem;
+}
+
+.container--pl {
+  padding-left: 2.5rem;
 }
 
 .header {
@@ -233,6 +272,7 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 .header__toggle {
   z-index: 2;
+  margin-right: 2rem;
 }
 
 .header__toggle > span {
@@ -253,6 +293,16 @@ button:hover, button :focus, .button:hover, .button :focus {
 .header nav {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.header__logo {
+  margin-left: 7%;
+}
+
+@media (min-width: 64em) {
+  .header__logo {
+    margin-left: 0;
+  }
 }
 
 .header__logo > img {
@@ -277,6 +327,13 @@ button:hover, button :focus, .button:hover, .button :focus {
   position: relative;
   letter-spacing: 0.1rem;
   text-decoration: none;
+  font-size: 1.2rem;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.header__links a:hover {
+  color: #F4D38B;
 }
 
 .header__links a::before {
@@ -284,7 +341,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   left: 0;
   bottom: 0;
   display: block;
-  height: 0.25rem;
+  height: 0.4rem;
   width: 0%;
   content: "";
   background-color: #F4D38B;
@@ -292,30 +349,29 @@ button:hover, button :focus, .button:hover, .button :focus {
   transition: all 0.5s ease;
 }
 
-.header__links a:hover::before {
+.header__links a:hover::before, .header__links a :active::before, .header__links a :focus::before {
   opacity: 1;
-  width: 100%;
-}
-
-.header__links a::after {
-  position: absolute;
-  left: 0;
-  content: attr(data-hover);
-  color: #F4D38B;
-  white-space: nowrap;
-  max-width: 0%;
-  overflow: hidden;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.header__links a:hover::after {
-  max-width: 100%;
+  width: 35%;
 }
 
 .hero {
+  margin-top: -0.1rem;
   background-color: #0F0F0F;
-  height: 100vh;
+  height: 92vh;
+}
+
+@media (min-width: 64em) {
+  .hero .container {
+    height: 87.5vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr auto;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: "text image" "office office";
+    justify-items: center;
+  }
 }
 
 .hero__image {
@@ -326,7 +382,20 @@ button:hover, button :focus, .button:hover, .button :focus {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 8rem;
+  min-height: 13rem;
+}
+
+@media (min-width: 40em) {
+  .hero__image {
+    grid-area: image;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__image {
+    padding-top: 0rem;
+    height: 100%;
+  }
 }
 
 .hero__image::before {
@@ -335,55 +404,84 @@ button:hover, button :focus, .button:hover, .button :focus {
   width: 100%;
   position: absolute;
   background-image: url("/img/pistonsReady.png");
-  background-size: 90%;
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
+@media (min-width: 64em) {
+  .hero__image::before {
+    background-size: 111%;
+    margin-right: 5rem;
+  }
+}
+
 .hero__text {
-  padding-top: 5rem;
+  padding-top: 3rem;
   text-align: center;
 }
 
+@media (min-width: 40em) {
+  .hero__text {
+    grid-area: text;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__text {
+    text-align: start;
+    margin-right: 20rem;
+    padding-top: 13rem;
+  }
+}
+
 .hero__text h1 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-weight: 400;
-  font-size: 3.5rem;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 1.5;
   color: #F4D38B;
   margin-bottom: 2.5rem;
 }
 
+@media (min-width: 64em) {
+  .hero__text h1 {
+    padding-left: 0;
+    line-height: 1.5;
+    font-size: 3.9rem;
+  }
+}
+
 .hero__text p {
+  line-height: 1.5;
+  font-size: 1.4rem;
+  color: #909095;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 64em) {
+  .hero__text p {
+    padding-left: 0;
+    font-size: 1.6rem;
+  }
+}
+
+.hero__oficinas {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+  .hero__oficinas {
+    grid-area: office;
+  }
+}
+
+.hero__oficinas p {
   padding-left: 5rem;
   padding-right: 5rem;
-  line-height: 1.5;
+  line-height: 5;
   font-size: 1.2rem;
   color: #909095;
-  margin-bottom: 7rem;
-}
-
-.hero__anchor {
-  display: block;
-  position: absolute;
-  bottom: 2rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: #0C0C0C;
-  -webkit-box-shadow: 0rem 0rem 0.4rem rgba(80, 80, 79, 0.16);
-          box-shadow: 0rem 0rem 0.4rem rgba(80, 80, 79, 0.16);
-  border: none;
-  border-radius: 50%;
-  text-decoration: none;
-  left: calc(50% - 1rem);
-}
-
-.hero__anchor span {
-  display: inline-block;
-  margin-top: 0.7rem;
-  margin-left: 0.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-right: 2.5rem;
-  background-image: url(/img/arrowDown.svg);
 }
 /*# sourceMappingURL=style.css.map */

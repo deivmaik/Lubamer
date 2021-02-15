@@ -1,7 +1,30 @@
 
 .hero {
+    margin-top: -0.1rem;
     background-color: $mainBackground;
-    height: 100vh;
+    height: 92vh;
+
+    & .container {
+        // This one applies the grid to the container only, otherwise the image would act like a block
+        @include breakpoint-up(large){
+            height: 87.5vh;
+            display: grid;
+            grid-template-columns:  1fr 1fr ;
+            grid-template-rows: 1fr auto;
+            grid-template-areas: 
+                "text image"
+                "office office";
+            justify-items: center;
+        }
+    }
+
+    // @include breakpoint-up(large){
+    //     display: flex;
+    //     border: 1px solid red;
+    //     min-height: 10rem;
+    //     align-items: center;
+    // }
+
     &__image {
         position: relative;
         height: 30%;
@@ -10,7 +33,22 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        min-height: 8rem;
+        min-height: 13rem;
+
+        @include breakpoint-up(medium){
+            grid-area: image;
+        }
+
+        @include breakpoint-up(large){
+        padding-top: 0rem;
+        height: 100%;
+        }
+
+
+        // @include breakpoint-up(large){
+        //     flex: 1; 
+        //     // This defines how many fr of the screen each portion gets 
+        // }
 
         &::before {
             content: "";
@@ -18,57 +56,85 @@
             width: 100%;
             position: absolute;
             background-image: url('/img/pistonsReady.png');
-            background-size: 90%;
+            background-size: 80%;
             background-repeat: no-repeat;
             background-position: center center;
+
+            @include breakpoint-up(large){
+                background-size: 111%;
+                margin-right: 5rem;
+            }
         }
     }
 
     &__text {
-        padding-top: 5rem;
+        padding-top: 3rem;
         text-align: center;
+        
+        @include breakpoint-up(medium){
+            grid-area: text;
+        }
+
+        @include breakpoint-up(large){
+            text-align: start;
+            margin-right: 20rem;
+            padding-top: 13rem;
+        }
+        
+
+        // @include breakpoint-up(large) {
+        //     flex: 1;
+        // }
 
         h1 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
             font-weight: 400;
-            font-size: 3.5rem;
-            line-height: 1;
+            font-size: 3rem;
+            line-height: 1.5;
             color: $golden;
             margin-bottom: 2.5rem;
+            
+
+            @include breakpoint-up(large){
+                padding-left: 0;
+                line-height: 1.5;
+                font-size: 3.9rem;
+                
+            }
         }
+
+        p {
+            line-height: 1.5;
+            font-size: $font-medium;
+            color: $grey;
+            margin-bottom: 5rem;
+
+            @include breakpoint-up(large){
+                padding-left: 0;
+                font-size: $font-large;
+            }
+        }
+
+    }
+
+    &__oficinas {
+        text-align: center;
+        @include breakpoint-up(medium){
+            grid-area: office;
+        }
+
+        // @include breakpoint-up(large){
+        //     display: inline-block;
+        // }
 
         p {
             padding-left: 5rem;
             padding-right: 5rem;
-            line-height: 1.5;
+            line-height: 5;
             font-size: $font-small;
             color: $grey;
-            margin-bottom: 7rem;
-        }
-
-    }
-
-    &__anchor {
-        display: block;
-        position: absolute;
-        bottom: 2rem;
-        width: 3.5rem;
-        height: 3.5rem;
-       
-        background-color: $secondBackground;
-        box-shadow: 0rem 0rem 0.4rem rgba(80, 80, 79, 0.16);
-        border: none;
-        border-radius: 50%;
-        text-decoration: none;
-        left: calc(50% - 1rem);
-
-        & span{
-            display: inline-block;
-            margin-top: 0.7rem;
-            margin-left: 0.5rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            margin-right: 2.5rem;
-            background-image: url(/img/arrowDown.svg);
         }
     }
+
 }
