@@ -27,11 +27,47 @@ body {
 
 h1, h2, h3 {
     margin-top: 0 ;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $golden;
+
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    
 
     @include breakpoint-up(large){
-        h1 {
-            font-size: $font-xl;
-        }
+        font-size: $font-xl;
+        padding-left: 0;
+        line-height: 1.5;
+        font-size: 3.9rem;
+        
+    }
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint-up(large){
+        font-size: 3.6rem;
+        margin-bottom: 3.6rem;
+    }
+}
+
+p {
+    line-height: 1.5;
+    font-size: $font-medium;
+    color: $grey;
+    margin-bottom: 5rem;
+
+    @include breakpoint-up(large){
+        padding-left: 0;
+        font-size: $font-large;
     }
 }
 
@@ -59,7 +95,7 @@ a, a:visited, a:hover {
 
 // Buttons
 
-button, .button {
+button, .button  {
     padding: 1.4rem 3rem;
     border: 0.2rem solid $golden;
     border-radius: 1.5rem;
@@ -96,15 +132,21 @@ button, .button {
     margin: 0 auto;
 
     &--pall {
-        padding-top:3.6rem;
-        padding-bottom:3.6rem;
+        padding-top:7rem;
+        padding-bottom:7rem;
         padding-right: 2.5rem;
-        padding-left: 2.5rem
+        padding-left: 2.5rem;
+
+        @include breakpoint-up(large){
+            padding-top: 9.5rem;
+            padding-bottom: 9.5rem;
+
+        }
     }
 
     &--py {
-        padding-top:3.6rem;
-        padding-bottom:3.6rem
+        padding-top:7rem;
+        padding-bottom:7rem
     }
 
     &--px {
@@ -113,11 +155,11 @@ button, .button {
     }
     
     &--pt {
-        padding-top:3.6rem 
+        padding-top:7rem 
     }
 
     &--pr {
-        padding-bottom:3.6rem 
+        padding-bottom:7rem 
     }
 
     &--pb {

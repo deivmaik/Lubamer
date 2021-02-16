@@ -2,12 +2,12 @@
 .hero {
     margin-top: -0.1rem;
     background-color: $mainBackground;
-    height: 92vh;
+    height: 100vh;
 
     & .container {
         // This one applies the grid to the container only, otherwise the image would act like a block
         @include breakpoint-up(large){
-            height: 87.5vh;
+            height: 100vh;
             display: grid;
             grid-template-columns:  1fr 1fr ;
             grid-template-rows: 1fr auto;
@@ -29,11 +29,11 @@
         position: relative;
         height: 30%;
         width: 100%;
-        margin-top: 5rem;
+        margin-top: 7rem;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        min-height: 13rem;
+        min-height: 15rem;
 
         @include breakpoint-up(medium){
             grid-area: image;
@@ -86,36 +86,6 @@
         //     flex: 1;
         // }
 
-        h1 {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            font-weight: 400;
-            font-size: 3rem;
-            line-height: 1.5;
-            color: $golden;
-            margin-bottom: 2.5rem;
-            
-
-            @include breakpoint-up(large){
-                padding-left: 0;
-                line-height: 1.5;
-                font-size: 3.9rem;
-                
-            }
-        }
-
-        p {
-            line-height: 1.5;
-            font-size: $font-medium;
-            color: $grey;
-            margin-bottom: 5rem;
-
-            @include breakpoint-up(large){
-                padding-left: 0;
-                font-size: $font-large;
-            }
-        }
-
     }
 
     &__oficinas {
@@ -129,11 +99,16 @@
         // }
 
         p {
+            padding-bottom: 5rem;
             padding-left: 5rem;
             padding-right: 5rem;
             line-height: 5;
             font-size: $font-small;
             color: $grey;
+
+            @include breakpoint-up(large){
+                padding-bottom: 5rem;
+            }
         }
     }
 
