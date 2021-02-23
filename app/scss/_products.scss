@@ -1,13 +1,11 @@
 
-.products__container{
-    
+.products {
     background-color: $thirdBackground;
     height: 100vh;
     width: 100%;
     min-width: 32rem;
     padding-top: 7rem;
     text-align: center;
-
 
     &__title {
         width: 90%;
@@ -34,92 +32,85 @@
     }   
 }
 
-
-.slider {
-    scroll-snap-type: x proximity;
-    overflow-x:hidden;
-    
-
-    .product__container{
+.product__container{
         
-        position: relative;
-        scroll-snap-align: center;
-        width: 70%;
-        min-width: 23rem;
-        max-width: 25rem;
-        height: 38rem;
-        margin: 5rem auto 0;
-        padding: 0 1.5rem;
-        background-color: $boxes;
-        box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
-        border-radius: 1rem;
-    }
-
-    .product__card{
-        padding-top: 3rem;
-        font-size: $font-small;
-        font-weight: 500;
-        line-height: 1.8rem;
-        color: black;
-    
-        
-    
-        .slide-img{
-            height: 15rem;
-            position: relative;
-    
-            &:hover .overlay {
-                visibility: visible;
-                animation: fade ease-in-out 0.5s; 
-            }
-    
-            .overlay {
-                    visibility: hidden;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                    width: 100%;
-                    height: 100%;
-                    background-color: $boxes;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-        }
-    
-        &--title {
-            font-size: $font-large;
-            font-weight: bold;
-            color: $grey;
-        }
-        &--description {
-            font-size: $font-small;
-            color: $grey;
-        }
-    
-        &--img {
-            width: auto;
-            height: 15rem;
-        }
-    
-        &--cta {
-            margin-bottom: 15rem;
-            padding: 1.4rem 3rem;
-            border: 0.2rem solid $golden;
-            border-radius: 1.5rem;
-            cursor: pointer;
-            color: $golden;
-            font-weight: 400;
-            transition: all 300ms ease-in-out;
-    
-        &:hover, :focus {
-            font-weight: 400;
-            background: $golden;
-            color: $mainBackground;
-            }
-        }
-    }
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 23rem;
+    max-width: 25rem;
+    height: 38rem;
+    margin: 5rem auto 0;
+    padding: 0 1.5rem;
+    background-color: $boxes;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
+    border-radius: 1rem;
 }
 
+.product__card{
+    background-color: red;
+    padding-top: 3rem;
+    font-size: $font-small;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
 
+    &--title {
+        font-size: $font-large;
+        font-weight: bold;
+        color: $grey;
+    }
+ 
+}
+
+.product__content {
+
+    height: 15rem;
+    position: relative;
+
+    &:hover .overlay {
+        visibility: visible;
+        animation: fade ease-in-out 0.5s; 
+    }
+
+    .overlay {
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        height: 100%;
+        background-color: $boxes;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &--img {
+        width: auto;
+        height: 15rem;
+    }
+
+    &--cta {
+        margin-bottom: 15rem;
+        padding: 1.4rem 3rem;
+        border: 0.2rem solid $golden;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        color: $golden;
+        font-weight: 400;
+        transition: all 300ms ease-in-out;
+
+    &:hover, :focus {
+        font-weight: 400;
+        background: $golden;
+        color: $mainBackground;
+        }
+    }
+
+    &--description {
+        font-size: $font-small;
+        color: $grey;
+    }
+}

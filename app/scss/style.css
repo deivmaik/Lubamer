@@ -678,7 +678,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   color: #FFFFFF;
 }
 
-.products__container {
+.products {
   background-color: #0A0A0A;
   height: 100vh;
   width: 100%;
@@ -687,7 +687,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   text-align: center;
 }
 
-.products__container__title {
+.products__title {
   width: 90%;
   min-width: 28rem;
   height: auto;
@@ -695,7 +695,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   margin-bottom: 5rem;
 }
 
-.products__container__title h2 {
+.products__title h2 {
   padding-top: 5rem;
   font-size: 1.4rem;
   font-weight: bold;
@@ -703,7 +703,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   color: #909095;
 }
 
-.products__container__title p {
+.products__title p {
   padding-top: 3rem;
   font-size: 1.2rem;
   font-weight: 500;
@@ -711,13 +711,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   color: #909095;
 }
 
-.slider {
-  -ms-scroll-snap-type: x proximity;
-      scroll-snap-type: x proximity;
-  overflow-x: hidden;
-}
-
-.slider .product__container {
+.product__container {
   position: relative;
   scroll-snap-align: center;
   width: 70%;
@@ -727,12 +721,13 @@ button:hover, button :focus, .button:hover, .button :focus {
   margin: 5rem auto 0;
   padding: 0 1.5rem;
   background-color: #151517;
-  -webkit-box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
-          box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
+  -webkit-box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
   border-radius: 1rem;
 }
 
-.slider .product__card {
+.product__card {
+  background-color: red;
   padding-top: 3rem;
   font-size: 1.2rem;
   font-weight: 500;
@@ -740,18 +735,24 @@ button:hover, button :focus, .button:hover, .button :focus {
   color: black;
 }
 
-.slider .product__card .slide-img {
+.product__card--title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #909095;
+}
+
+.product__content {
   height: 15rem;
   position: relative;
 }
 
-.slider .product__card .slide-img:hover .overlay {
+.product__content:hover .overlay {
   visibility: visible;
   -webkit-animation: fade ease-in-out 0.5s;
           animation: fade ease-in-out 0.5s;
 }
 
-.slider .product__card .slide-img .overlay {
+.product__content .overlay {
   visibility: hidden;
   position: absolute;
   left: 50%;
@@ -772,23 +773,12 @@ button:hover, button :focus, .button:hover, .button :focus {
           align-items: center;
 }
 
-.slider .product__card--title {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #909095;
-}
-
-.slider .product__card--description {
-  font-size: 1.2rem;
-  color: #909095;
-}
-
-.slider .product__card--img {
+.product__content--img {
   width: auto;
   height: 15rem;
 }
 
-.slider .product__card--cta {
+.product__content--cta {
   margin-bottom: 15rem;
   padding: 1.4rem 3rem;
   border: 0.2rem solid #F4D38B;
@@ -800,9 +790,14 @@ button:hover, button :focus, .button:hover, .button :focus {
   transition: all 300ms ease-in-out;
 }
 
-.slider .product__card--cta:hover, .slider .product__card--cta :focus {
+.product__content--cta:hover, .product__content--cta :focus {
   font-weight: 400;
   background: #F4D38B;
   color: #0F0F0F;
+}
+
+.product__content--description {
+  font-size: 1.2rem;
+  color: #909095;
 }
 /*# sourceMappingURL=style.css.map */
