@@ -881,6 +881,38 @@ button:hover, button :focus, .button:hover, .button :focus {
   color: black;
 }
 
+.product__card .slide-img {
+  height: 15rem;
+  position: relative;
+}
+
+.product__card .slide-img:hover .overlay {
+  visibility: visible;
+  -webkit-animation: fade ease-in-out 0.5s;
+          animation: fade ease-in-out 0.5s;
+}
+
+.product__card .slide-img .overlay {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #151517;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .product__card--title {
   font-size: 1.6rem;
   font-weight: bold;
