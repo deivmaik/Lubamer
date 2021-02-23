@@ -43,3 +43,15 @@
 .fade-out {
     animation: fade-out 350ms ease-in-out forwards;
 }
+
+
+
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
