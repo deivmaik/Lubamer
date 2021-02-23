@@ -553,7 +553,7 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 .about__item {
   max-width: 35rem;
-  background-color: #202022;
+  background-color: #151517;
   -webkit-box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
           box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
   border-radius: 1rem;
@@ -658,5 +658,102 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 .certificates__title {
   color: #FFFFFF;
+}
+
+.products__container {
+  background-color: #0A0A0A;
+  height: 100vh;
+  width: 100%;
+  min-width: 32rem;
+  padding-top: 7rem;
+  text-align: center;
+}
+
+.products__container__title {
+  width: 90%;
+  min-width: 28rem;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.products__container__title h2 {
+  padding-top: 5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: #909095;
+}
+
+.products__container__title p {
+  padding-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: #909095;
+}
+
+.products__container--slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  -ms-scroll-snap-type: x proximity;
+      scroll-snap-type: x proximity;
+}
+
+.products__container--card {
+  position: relative;
+  scroll-snap-align: center;
+  width: 70%;
+  min-width: 23rem;
+  max-width: 30rem;
+  height: 35rem;
+  margin: 5rem auto 0;
+  padding: 0 1.5rem;
+  background-color: #151517;
+  -webkit-box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
+          box-shadow: 0 0.4rem 0.8rem rgba(36, 34, 34, 0.16);
+  border-radius: 1rem;
+}
+
+.product__card {
+  padding-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: black;
+}
+
+.product__card--title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #909095;
+}
+
+.product__card--description {
+  font-size: 1.2rem;
+  color: #909095;
+}
+
+.product__card--cta {
+  margin-bottom: 15rem;
+  padding: 1.4rem 3rem;
+  border: 0.2rem solid #F4D38B;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  color: #F4D38B;
+  font-weight: 400;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.product__card--cta:hover, .product__card--cta :focus {
+  font-weight: 400;
+  background: #F4D38B;
+  color: #0F0F0F;
 }
 /*# sourceMappingURL=style.css.map */
