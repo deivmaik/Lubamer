@@ -69,7 +69,12 @@
 
     &__text {
         padding-top: 3rem;
+        
         text-align: center;
+
+        p{
+            margin-bottom: 5rem;
+        }
         
         @include breakpoint-up(medium){
             grid-area: text;

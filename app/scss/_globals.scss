@@ -64,7 +64,7 @@ p {
     line-height: 1.5;
     font-size: $font-medium;
     color: $grey;
-    margin-bottom: 5rem;
+    
 
     @include breakpoint-up(large){
         padding-left: 0;

@@ -163,7 +163,6 @@ p {
   line-height: 1.5;
   font-size: 1.4rem;
   color: #909095;
-  margin-bottom: 5rem;
 }
 
 @media (min-width: 64em) {
@@ -486,6 +485,10 @@ button:hover, button :focus, .button:hover, .button :focus {
   text-align: center;
 }
 
+.hero__text p {
+  margin-bottom: 5rem;
+}
+
 @media (min-width: 40em) {
   .hero__text {
     grid-area: text;
@@ -682,7 +685,6 @@ button:hover, button :focus, .button:hover, .button :focus {
 .products__container {
   max-width: 155rem;
   margin: 0 auto;
-  height: 100vh;
   background-color: #0A0A0A;
 }
 
@@ -709,7 +711,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   width: 70%;
   min-width: 23rem;
   max-width: 25rem;
-  height: 38rem;
+  height: 35rem;
   margin: 5rem auto 0;
   padding: 0 1.5rem;
   background-color: #151517;
@@ -797,6 +799,12 @@ button:hover, button :focus, .button:hover, .button :focus {
 .product__content--description {
   font-size: 1.2rem;
   color: #909095;
+  margin-bottom: 3rem;
+}
+
+.original {
+  height: 100vh;
+  background-color: #0A0A0A;
 }
 
 .footer {
@@ -847,12 +855,11 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .footer__container > div .footer__contact--description {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  margin-bottom: 5rem;
 }
 
 .footer__container > div .footer__contact--title {
-  margin-top: 5rem;
-  margin-top: 5rem;
   color: #909095;
 }
 
@@ -863,7 +870,7 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .footer__container > div .footer__contact--email {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 64em) {
@@ -873,7 +880,7 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .footer__container > div .footer__contact--fb {
-  margin-top: 5rem;
+  font-size: 1.2rem;
 }
 
 .footer__container > div .footer__contact--fb img {
@@ -891,12 +898,13 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .footer__container > div .footer__scz h4 {
+  font-size: 1.2rem;
   margin-top: 5rem;
   color: #909095;
 }
 
 .footer__container > div .footer__scz p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 64em) {
@@ -909,12 +917,13 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .footer__container > div .footer__lpz h4 {
+  font-size: 1.2rem;
   margin-top: 5rem;
   color: #909095;
 }
 
 .footer__container > div .footer__lpz p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .footer__container .footer__copyright {
@@ -923,5 +932,6 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 .footer__container .footer__copyright p {
   text-align: center;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=style.css.map */

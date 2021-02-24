@@ -42,13 +42,12 @@
                 }
         
                 &--description{
-                    font-size: $font-medium;
+                    font-size: $font-small;
+                    margin-bottom: 5rem;
   
                 }
         
                 &--title{
-                    margin-top: 5rem;
-                    margin-top: 5rem;
                     color: $grey;
 
                     @include breakpoint-up(large){
@@ -58,7 +57,8 @@
                 }
         
                 &--email{
-                    font-size: $font-medium;
+                    font-size: $font-small;
+                    
 
                     @include breakpoint-up(large){
                         margin-top: -1rem;
@@ -66,8 +66,7 @@
                 }
         
                 &--fb{
-                    
-                    margin-top: 5rem;
+                    font-size: $font-small;
                 img{  
                     width: 1.25rem;
                     height: auto;
@@ -84,12 +83,13 @@
 
     
             h4  {
+                font-size: $font-small;
                 margin-top: 5rem;
                 color: $grey;
                 }
        
             p   {
-                font-size: $font-medium;
+                font-size: $font-small;
                 }  
             }
        
@@ -103,12 +103,14 @@
            
        
                 h4{
+                    font-size: $font-small;
                     margin-top: 5rem;
                     color: $grey;
                 }
        
                 p{
-                    font-size: $font-medium;
+                    font-size: $font-small;
+
                 } 
             }
 
@@ -118,6 +120,8 @@
            
                 p{
                 text-align: center;
+                font-size: $font-small;
+
                 }
             } 
     
