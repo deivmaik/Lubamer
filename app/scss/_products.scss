@@ -1,4 +1,11 @@
 
+.products__container{
+    max-width: 155rem;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: $thirdBackground;
+}
+
 .products {
     background-color: $thirdBackground;
     height: 100vh;
@@ -12,23 +19,7 @@
         min-width: 28rem;
         height: auto;
         margin: 0 auto;
-        margin-bottom: 5rem;
-
-        h2{
-            padding-top: 5rem;
-            font-size: $font-medium;
-            font-weight: bold;
-            line-height: 2.6rem;
-            color: $grey;
-        }
-
-        p{
-            padding-top: 3rem;
-            font-size: $font-small;
-            font-weight: 500;
-            line-height: 1.8rem;
-            color: $grey;
-        }
+        margin-bottom: 5rem;  
     }   
 }
 
@@ -44,11 +35,10 @@
     padding: 0 1.5rem;
     background-color: $boxes;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
-    border-radius: 1rem;
+    border-radius: 2rem;
 }
 
 .product__card{
-    background-color: red;
     padding-top: 3rem;
     font-size: $font-small;
     font-weight: 500;
@@ -85,11 +75,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        p{
+            padding-top: 5rem;
+            font-size: 1.2rem;
+        }
     }
     
     &--img {
         width: auto;
         height: 15rem;
+        transform: all 250ms ease-in-out;
     }
 
     &--cta {

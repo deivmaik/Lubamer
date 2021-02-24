@@ -678,6 +678,13 @@ button:hover, button :focus, .button:hover, .button :focus {
   color: #FFFFFF;
 }
 
+.products__container {
+  max-width: 155rem;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #0A0A0A;
+}
+
 .products {
   background-color: #0A0A0A;
   height: 100vh;
@@ -695,22 +702,6 @@ button:hover, button :focus, .button:hover, .button :focus {
   margin-bottom: 5rem;
 }
 
-.products__title h2 {
-  padding-top: 5rem;
-  font-size: 1.4rem;
-  font-weight: bold;
-  line-height: 2.6rem;
-  color: #909095;
-}
-
-.products__title p {
-  padding-top: 3rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.8rem;
-  color: #909095;
-}
-
 .product__container {
   position: relative;
   scroll-snap-align: center;
@@ -723,11 +714,10 @@ button:hover, button :focus, .button:hover, .button :focus {
   background-color: #151517;
   -webkit-box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
           box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 
 .product__card {
-  background-color: red;
   padding-top: 3rem;
   font-size: 1.2rem;
   font-weight: 500;
@@ -773,9 +763,16 @@ button:hover, button :focus, .button:hover, .button :focus {
           align-items: center;
 }
 
+.product__content .overlay p {
+  padding-top: 5rem;
+  font-size: 1.2rem;
+}
+
 .product__content--img {
   width: auto;
   height: 15rem;
+  -webkit-transform: all 250ms ease-in-out;
+          transform: all 250ms ease-in-out;
 }
 
 .product__content--cta {
