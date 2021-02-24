@@ -805,46 +805,123 @@ button:hover, button :focus, .button:hover, .button :focus {
   text-align: center;
 }
 
+@media (min-width: 64em) {
+  .footer {
+    text-align: start;
+  }
+}
+
 .footer a {
   color: white;
 }
 
-.footer__logo img {
+@media (min-width: 64em) {
+  .footer__container > div {
+    max-width: 111rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer__container > div .footer__contact {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+.footer__container > div .footer__contact--logo img {
   width: 15rem;
   height: auto;
   margin-bottom: 2rem;
 }
 
-.footer__contact h4 {
+.footer__container > div .footer__contact--description {
+  font-size: 1.4rem;
+}
+
+.footer__container > div .footer__contact--title {
   margin-top: 5rem;
   margin-top: 5rem;
   color: #909095;
 }
 
-.footer__contact p {
+@media (min-width: 64em) {
+  .footer__container > div .footer__contact--title {
+    margin-top: -4rem;
+  }
+}
+
+.footer__container > div .footer__contact--email {
   font-size: 1.4rem;
 }
 
-.footer__contact .social-media img {
+@media (min-width: 64em) {
+  .footer__container > div .footer__contact--email {
+    margin-top: -1rem;
+  }
+}
+
+.footer__container > div .footer__contact--fb {
+  margin-top: 5rem;
+}
+
+.footer__container > div .footer__contact--fb img {
   width: 1.25rem;
   height: auto;
 }
 
-.footer__scz h4 {
+@media (min-width: 64em) {
+  .footer__container > div .footer__scz {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-top: -1rem;
+  }
+}
+
+.footer__container > div .footer__scz h4 {
   margin-top: 5rem;
   color: #909095;
 }
 
-.footer__scz p {
+.footer__container > div .footer__scz p {
   font-size: 1.4rem;
 }
 
-.footer__lpz h4 {
+@media (min-width: 64em) {
+  .footer__container > div .footer__lpz {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-top: -1rem;
+  }
+}
+
+.footer__container > div .footer__lpz h4 {
   margin-top: 5rem;
   color: #909095;
 }
 
-.footer__lpz p {
+.footer__container > div .footer__lpz p {
   font-size: 1.4rem;
+}
+
+.footer__container .footer__copyright {
+  display: block;
+}
+
+.footer__container .footer__copyright p {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
