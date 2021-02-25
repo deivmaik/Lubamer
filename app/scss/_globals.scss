@@ -7,8 +7,8 @@ html {
 
 *, *::before, *::after {
     box-sizing: inherit;
-    // outline: 1px solid red;
-    // outline-offset: -1px;
+    outline: 1px solid red;
+    outline-offset: -1px;
 }
 
 body {
@@ -133,6 +133,11 @@ button, .button  {
     max-width: 111rem;
     margin: 0 auto;
 
+    @include breakpoint-up(xlarge){
+        max-width: 140rem;
+        margin: 0 auto;
+    }
+
     &--pall {
         padding-top:7rem;
         padding-bottom:7rem;
@@ -144,6 +149,8 @@ button, .button  {
             padding-bottom: 9.5rem;
 
         }
+
+        
     }
 
     &--py {

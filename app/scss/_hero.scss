@@ -98,14 +98,17 @@
 
         @include breakpoint-up(large){
             text-align: start;
-            margin-right: 20rem;
+            padding-right: 20rem;
             padding-top: 13rem;
         }
-        
 
-        // @include breakpoint-up(large) {
-        //     flex: 1;
-        // }
+        @include breakpoint-up(xlarge){
+            text-align: start;
+            padding-right: 40rem;
+            
+
+        }
+        
 
     }
 

@@ -1,9 +1,14 @@
 
+    
+
+
+
 .products__container{
-    max-width: 155rem;
-    margin: 3rem auto;
-    height: 100vh;
+    padding-top: 10rem;
+    max-width: 148rem;
+    margin: 0rem auto;
     background-color: $thirdBackground;
+    
 }
 
 .products {
@@ -11,7 +16,6 @@
     height: 100vh;
     width: 100%;
     min-width: 32rem;
-    padding-top: 7rem;
     text-align: center;
 
     &__title {
@@ -36,13 +40,12 @@
 }
 
 .product__container{
-    
+    height: 35rem;
     position: relative;
     scroll-snap-align: center;
     width: 70%;
     min-width: 23rem;
     max-width: 25rem;
-    height: 35rem;
     margin: 0rem 2rem 0;
     padding: 0 1.5rem;
     background-color: $boxes;
