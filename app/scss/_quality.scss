@@ -1,0 +1,49 @@
+
+.quality {
+    background-color: $thirdBackground;
+    text-align: center;
+    margin-bottom: -2rem;
+    
+
+    &__product{
+           
+        img{
+            height: 40rem;
+            width: auto;
+           
+        }
+    }
+
+    &__instructions{
+        margin: 0 2rem; 
+        &--title{
+            margin-top: 5rem;
+            font-size: 2rem;
+        }
+
+        &--subtitle{
+            
+            color: $grey;
+            font-size: small;
+        }
+
+        &--list{
+            margin-top: 2.5rem;
+            color: $grey;
+            font-size: small;
+            & li {
+                margin-top: 1rem;
+            }
+        }
+
+        &--end{
+            margin-top: 2.5rem;
+            padding-bottom: 5rem;
+            color: $grey;
+            font-size: small;
+           
+        }
+
+    }
+}
+
