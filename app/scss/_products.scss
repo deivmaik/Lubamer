@@ -1,8 +1,8 @@
 
 .products__container{
     max-width: 155rem;
-    margin: 0 auto;
-    
+    margin: 3rem auto;
+    height: 100vh;
     background-color: $thirdBackground;
 }
 
@@ -36,14 +36,14 @@
 }
 
 .product__container{
-        
+    
     position: relative;
     scroll-snap-align: center;
     width: 70%;
     min-width: 23rem;
     max-width: 25rem;
     height: 35rem;
-    margin: 5rem 2rem 0;
+    margin: 0rem 2rem 0;
     padding: 0 1.5rem;
     background-color: $boxes;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);

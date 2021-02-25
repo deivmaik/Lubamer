@@ -13,7 +13,10 @@
     }
 
     p{
-        margin-top: -4rem;
+        margin-top: -2rem;
+        @include breakpoint-up(large){
+            margin-top: -4rem;
+        }
     }
 
     &__cards{
@@ -22,14 +25,18 @@
         justify-content: center;
         
         div{
+        
         display: flex;
-        width: 15rem;
-        height: 15rem;
+        width: 10rem;
+        height: 10rem;
         background-color: transparent;
         border-radius: 1rem;
         margin: 1.5rem;
      
-            
+            @include breakpoint-up(large){
+                width: 15rem;
+                height: 15rem;
+            }
             img {
                 transition: all 500ms ease-in-out;
                 &:hover{

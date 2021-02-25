@@ -648,7 +648,13 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .certificates p {
-  margin-top: -4rem;
+  margin-top: -2rem;
+}
+
+@media (min-width: 64em) {
+  .certificates p {
+    margin-top: -4rem;
+  }
 }
 
 .certificates__cards {
@@ -666,11 +672,18 @@ button:hover, button :focus, .button:hover, .button :focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   background-color: transparent;
   border-radius: 1rem;
   margin: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .certificates__cards div {
+    width: 15rem;
+    height: 15rem;
+  }
 }
 
 .certificates__cards div img {
@@ -689,7 +702,8 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 .products__container {
   max-width: 155rem;
-  margin: 0 auto;
+  margin: 3rem auto;
+  height: 100vh;
   background-color: #0A0A0A;
 }
 
@@ -726,7 +740,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   min-width: 23rem;
   max-width: 25rem;
   height: 35rem;
-  margin: 5rem 2rem 0;
+  margin: 0rem 2rem 0;
   padding: 0 1.5rem;
   background-color: #151517;
   -webkit-box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.16);
@@ -855,13 +869,42 @@ button:hover, button :focus, .button:hover, .button :focus {
   margin-bottom: -2rem;
 }
 
+@media (min-width: 64em) {
+  .quality__container {
+    margin-top: 5rem;
+    height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: start;
+    margin-left: 15rem;
+  }
+}
+
 .quality__product img {
   height: 40rem;
   width: auto;
+  display: none;
+}
+
+@media (min-width: 64em) {
+  .quality__product img {
+    margin-top: 5rem;
+    display: block;
+  }
 }
 
 .quality__instructions {
-  margin: 0 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding-bottom: 10rem;
+}
+
+@media (min-width: 64em) {
+  .quality__instructions {
+    margin-top: 8rem;
+    margin-right: 20rem;
+  }
 }
 
 .quality__instructions--title {
@@ -872,6 +915,12 @@ button:hover, button :focus, .button:hover, .button :focus {
 .quality__instructions--subtitle {
   color: #909095;
   font-size: small;
+}
+
+@media (min-width: 64em) {
+  .quality__instructions--subtitle {
+    margin-top: 5rem;
+  }
 }
 
 .quality__instructions--list {

@@ -4,35 +4,66 @@
     text-align: center;
     margin-bottom: -2rem;
     
+    &__container {
+        @include breakpoint-up(large){
+            margin-top: 5rem;
+            height: 90vh;
+            display: flex;
+            text-align: start;
+            margin-left: 15rem;
+
+        }
+    }
 
     &__product{
            
         img{
             height: 40rem;
             width: auto;
-           
+            display: none;
+            @include breakpoint-up(large){
+                margin-top: 5rem;
+                display: block;
+            }
         }
     }
 
     &__instructions{
-        margin: 0 2rem; 
+        margin-right: 2rem;
+        margin-left: 2rem;
+        padding-bottom: 10rem ; 
+
+        
+
+        @include breakpoint-up(large){
+            margin-top: 8rem;
+            margin-right: 20rem;
+            
+        }
         &--title{
             margin-top: 5rem;
             font-size: 2rem;
+
         }
 
         &--subtitle{
             
             color: $grey;
             font-size: small;
+            @include breakpoint-up(large){
+                margin-top: 5rem;
+                
+            }
         }
 
         &--list{
             margin-top: 2.5rem;
             color: $grey;
             font-size: small;
+            
             & li {
                 margin-top: 1rem;
+                
             }
         }
 
@@ -46,4 +77,6 @@
 
     }
 }
+
+
 
