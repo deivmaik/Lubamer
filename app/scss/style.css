@@ -108,8 +108,11 @@ html {
 *, *::before, *::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
-  outline: 1px solid red;
-  outline-offset: -1px;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 body {
@@ -284,6 +287,10 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 .header {
   background-color: #0F0F0F;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header.open .header__toggle > span:first-child {
@@ -473,9 +480,17 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 @media (min-width: 64em) {
   .hero__image {
+    margin-top: 2rem;
     min-height: 15rem;
     padding-top: 0rem;
     height: 100%;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .hero__image {
+    padding-top: 15rem;
+    height: 65%;
   }
 }
 
@@ -493,6 +508,13 @@ button:hover, button :focus, .button:hover, .button :focus {
 @media (min-width: 64em) {
   .hero__image::before {
     background-size: 111%;
+    margin-right: 5rem;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .hero__image::before {
+    background-size: 130%;
     margin-right: 5rem;
   }
 }
@@ -524,6 +546,8 @@ button:hover, button :focus, .button:hover, .button :focus {
   .hero__text {
     text-align: start;
     padding-right: 40rem;
+    padding-top: 25rem;
+    width: 80rem;
   }
 }
 
@@ -534,6 +558,12 @@ button:hover, button :focus, .button:hover, .button :focus {
 @media (min-width: 40em) {
   .hero__oficinas {
     grid-area: office;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__oficinas {
+    padding-bottom: 2rem;
   }
 }
 

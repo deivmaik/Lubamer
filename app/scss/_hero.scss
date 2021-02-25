@@ -49,9 +49,17 @@
         }
 
         @include breakpoint-up(large){
+        margin-top: 2rem;
         min-height: 15rem;
         padding-top: 0rem;
         height: 100%;
+        }
+
+        @include breakpoint-up(xlarge){
+        padding-top: 15rem;
+        height: 65%;
+
+            
         }
 
 
@@ -76,6 +84,11 @@
 
             @include breakpoint-up(large){
                 background-size: 111%;
+                margin-right: 5rem;
+            }
+
+            @include breakpoint-up(xlarge){
+                background-size: 130%;
                 margin-right: 5rem;
             }
         }
@@ -105,8 +118,8 @@
         @include breakpoint-up(xlarge){
             text-align: start;
             padding-right: 40rem;
-            
-
+            padding-top: 25rem;
+            width: 80rem;
         }
         
 
@@ -116,6 +129,10 @@
         text-align: center;
         @include breakpoint-up(medium){
             grid-area: office;
+        }
+
+        @include breakpoint-up(large){
+            padding-bottom: 2rem;
         }
 
         // @include breakpoint-up(large){
