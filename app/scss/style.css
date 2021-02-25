@@ -423,8 +423,15 @@ button:hover, button :focus, .button:hover, .button :focus {
   height: 100vh;
 }
 
+@media (min-width: 40em) {
+  .hero .container {
+    padding-top: 10rem;
+  }
+}
+
 @media (min-width: 64em) {
   .hero .container {
+    padding-top: 0rem;
     height: 100vh;
     display: -ms-grid;
     display: grid;
@@ -451,11 +458,13 @@ button:hover, button :focus, .button:hover, .button :focus {
 @media (min-width: 40em) {
   .hero__image {
     grid-area: image;
+    min-height: 30rem;
   }
 }
 
 @media (min-width: 64em) {
   .hero__image {
+    min-height: 15rem;
     padding-top: 0rem;
     height: 100%;
   }
@@ -525,6 +534,10 @@ button:hover, button :focus, .button:hover, .button :focus {
   .hero__oficinas p {
     padding-bottom: 5rem;
   }
+}
+
+.hero__oficinas .arrow {
+  color: grey;
 }
 
 .about {
@@ -887,7 +900,7 @@ button:hover, button :focus, .button:hover, .button :focus {
   display: none;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 40em) {
   .quality__product img {
     margin-top: 5rem;
     display: block;

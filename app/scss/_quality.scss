@@ -21,7 +21,7 @@
             height: 40rem;
             width: auto;
             display: none;
-            @include breakpoint-up(large){
+            @include breakpoint-up(medium){
                 margin-top: 5rem;
                 display: block;
             }

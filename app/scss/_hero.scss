@@ -5,8 +5,15 @@
     height: 100vh;
 
     & .container {
+
+        @include breakpoint-up(medium){
+            padding-top: 10rem;
+        }
+
+
         // This one applies the grid to the container only, otherwise the image would act like a block
         @include breakpoint-up(large){
+            padding-top: 0rem;
             height: 100vh;
             display: grid;
             grid-template-columns:  1fr 1fr ;
@@ -37,9 +44,12 @@
 
         @include breakpoint-up(medium){
             grid-area: image;
+            min-height: 30rem;
+
         }
 
         @include breakpoint-up(large){
+        min-height: 15rem;
         padding-top: 0rem;
         height: 100%;
         }
@@ -60,6 +70,10 @@
             background-repeat: no-repeat;
             background-position: center center;
 
+            @include breakpoint-up(medium){
+                
+            }
+
             @include breakpoint-up(large){
                 background-size: 111%;
                 margin-right: 5rem;
@@ -75,6 +89,8 @@
         p{
             margin-bottom: 5rem;
         }
+
+        
         
         @include breakpoint-up(medium){
             grid-area: text;
@@ -114,6 +130,10 @@
             @include breakpoint-up(large){
                 padding-bottom: 5rem;
             }
+        }
+
+        .arrow{
+            color: grey;
         }
     }
 
