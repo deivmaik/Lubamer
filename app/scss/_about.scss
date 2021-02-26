@@ -60,6 +60,10 @@
             margin: 1.5rem;
         }
 
+        @include breakpoint-up(medium){
+            flex: 1 1 33%;
+        }
+
         @include breakpoint-up(large){
             flex: 1;
         }
