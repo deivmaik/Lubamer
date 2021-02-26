@@ -33,7 +33,6 @@
             display: none;
             
             @include breakpoint-up(medium){
-                margin-top: 5rem;
                 margin-left: 15rem;
                 display: block;
             }
@@ -44,11 +43,12 @@
         margin-right: 2rem;
         margin-left: 2rem;
         padding-bottom: 10rem ; 
+        padding-top: 8rem;
 
         
 
         @include breakpoint-up(large){
-            margin-top: 8rem;
+
             margin-right: 20rem;
             
         }

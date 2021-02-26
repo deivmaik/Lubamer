@@ -103,6 +103,7 @@ html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
@@ -412,6 +413,10 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 .header__links a:hover {
+  color: #F4D38B;
+}
+
+.header__links a:active {
   color: #F4D38B;
 }
 
@@ -988,7 +993,6 @@ button:hover, button :focus, .button:hover, .button :focus {
 
 @media (min-width: 40em) {
   .quality__product img {
-    margin-top: 5rem;
     margin-left: 15rem;
     display: block;
   }
@@ -998,11 +1002,11 @@ button:hover, button :focus, .button:hover, .button :focus {
   margin-right: 2rem;
   margin-left: 2rem;
   padding-bottom: 10rem;
+  padding-top: 8rem;
 }
 
 @media (min-width: 64em) {
   .quality__instructions {
-    margin-top: 8rem;
     margin-right: 20rem;
   }
 }

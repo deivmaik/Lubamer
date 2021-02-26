@@ -133,7 +133,11 @@
             font-size: $font-small;
             transition: all 250ms ease-in-out;
 
-            &:hover{
+            &:hover {
+                color: $golden;
+            }
+
+            &:active {
                 color: $golden;
             }
             
