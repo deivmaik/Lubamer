@@ -774,6 +774,12 @@ button:hover, button :focus, .button:hover, .button :focus {
   text-align: center;
 }
 
+@media (min-width: 87.5em) {
+  .products {
+    height: 70vh;
+  }
+}
+
 .products__title {
   width: 90%;
   min-width: 28rem;
@@ -927,14 +933,30 @@ button:hover, button :focus, .button:hover, .button :focus {
 }
 
 @media (min-width: 64em) {
+  .quality {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .quality {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 64em) {
   .quality__container {
-    max-width: 155rem;
-    height: 90vh;
+    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     text-align: start;
-    margin-left: 0rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .quality__container {
+    height: 60vh;
   }
 }
 
@@ -947,6 +969,7 @@ button:hover, button :focus, .button:hover, .button :focus {
 @media (min-width: 40em) {
   .quality__product img {
     margin-top: 5rem;
+    margin-left: 15rem;
     display: block;
   }
 }
@@ -1026,6 +1049,12 @@ button:hover, button :focus, .button:hover, .button :focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .footer__container > div {
+    max-width: 140rem;
   }
 }
 

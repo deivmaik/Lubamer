@@ -2,15 +2,26 @@
 .quality {
     background-color: $thirdBackground;
     text-align: center;
+
+    @include breakpoint-up(large){
+        height: 80vh;
+    }
+
+    @include breakpoint-up(xlarge){
+        height: 60vh;
+    }
+
     
     &__container {
         @include breakpoint-up(large){
-            max-width: 155rem;
-            height: 90vh;
+            height: 100vh;
             display: flex;
             text-align: start;
-            margin-left: 0rem;
+        }
 
+        @include breakpoint-up(large){
+            height: 60vh;
+            
         }
     }
 
@@ -22,6 +33,7 @@
             display: none;
             @include breakpoint-up(medium){
                 margin-top: 5rem;
+                margin-left: 15rem;
                 display: block;
             }
         }

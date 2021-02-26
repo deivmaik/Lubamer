@@ -27,6 +27,12 @@
             
             }
 
+             @include breakpoint-up(xlarge){
+
+                max-width: 140rem;
+                
+            }
+
             .footer__contact{
 
                 @include breakpoint-up(large){

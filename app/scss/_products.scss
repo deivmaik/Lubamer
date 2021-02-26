@@ -18,6 +18,10 @@
     min-width: 32rem;
     text-align: center;
 
+    @include breakpoint-up(xlarge){
+        height: 70vh;
+    }
+
     &__title {
         width: 90%;
         min-width: 28rem;
