@@ -1,188 +1,175 @@
-
-
 .header {
-    background-color: $mainBackground;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    // Mobile menu starts 
-    &.open {
-        
-        .header__toggle {
-            // This is for when its active so it transforms into an X 
-        > span:first-child {
-            transform: rotate(45deg);
-        }
+  background-color: $mainBackground;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  // Mobile menu starts
+  &.open {
+    .header__toggle {
+      z-index: 10;
+      // This is for when its active so it transforms into an X
+      > span:first-child {
+        transform: rotate(45deg);
+      }
 
-        > span:nth-child(2) {
-            opacity: 0;
-        }
-
-        > span:last-child {
-            transform: rotate(-45deg)
-        }
-        }
-    }
-
-    // Mobile dropdown menu starts 
-    &__menu {
-        z-index: 2;
-        background: transparent;
-        padding: 2.6rem;
-        position: absolute;
-        width: calc(100% - 5rem);
-        left: 50%;
-        transform: translateX(-50%);
-        top: 20%;
-
-
-        a {
-            display: block;
-            color: $white;
-            font-size: 2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-align: center;
-            padding: 2rem 2rem;
-            
-        }
-    }
-
-    // Mobile dropdown menu ends 
-
-    .overlay {
+      > span:nth-child(2) {
         opacity: 0;
-        z-index: 1;
-        position:fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  // Mobile dropdown menu starts
+  &__menu {
+    z-index: 2;
+    background: transparent;
+    padding: 2.6rem;
+    position: absolute;
+    width: calc(100% - 5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+
+    a {
+      display: block;
+      color: $white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      padding: 2rem 2rem;
+    }
+  }
+
+  // Mobile dropdown menu ends
+
+  .overlay {
+    opacity: 0;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $mainBackground;
+
+    & .fade-in {
+      // the display has to be block for the animation to work
+      display: block;
+    }
+
+    & .fade-out {
+      display: none;
+    }
+  }
+
+  &__toggle {
+    z-index: 2;
+    margin-right: 2rem;
+    > span {
+      display: block;
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: $grey;
+      transition: all 250ms ease-in-out;
+      transform-origin: 0.25rem 0.1rem;
+      // transform origin is for the effect of turning it into an X
+
+      &:not(:last-child) {
+        // This adds a margin bottom to all the spans except the last one
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  // Desktop Menu starts
+
+  nav {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &__logo {
+    margin-left: 7%;
+    @include breakpoint-up(large) {
+      margin-left: 0;
+    }
+    > img {
+      max-width: 12.5rem;
+      height: auto;
+    }
+  }
+
+  &__links {
+    & > ul {
+      list-style-type: none;
+
+      & > li {
+        display: inline-block;
+        list-style: outside none none;
+        margin: 0 1.5em;
+        padding: 0;
+      }
+    }
+
+    a {
+      padding: 0.5em 0;
+      color: $grey;
+      position: relative;
+      letter-spacing: 0.1rem;
+      text-decoration: none;
+      font-size: $font-small;
+      transition: all 250ms ease-in-out;
+
+      &:hover {
+        color: $golden;
+      }
+
+      &:active {
+        color: $golden;
+      }
+
+      &::before {
+        // This one is for the line that goes bellow it
+        position: absolute;
         left: 0;
-        background-color: $mainBackground;
+        // left: 50%;
+        // transform: translate(-50%, 0);
+        // In case I want it to start from the middle, the one above works
+        bottom: 0;
+        display: block;
+        height: 0.4rem;
+        width: 0%;
+        content: '';
+        background-color: $golden;
+        transition: all 0.5s ease;
+      }
+      &:hover::before,
+      :active::before,
+      :focus::before {
+        opacity: 1;
+        width: 35%;
+      }
 
-        & .fade-in {
-            // the display has to be block for the animation to work 
-            display: block;
-        }
+      // &::after {
+      //     // This effect gives a progressive hover using data hover attributes
+      //     position: absolute;
+      //     left: 0;
+      //     content: attr(data-hover);
+      //     color: $golden;
+      //     white-space: nowrap;
+      //     max-width: 0%;
+      //     overflow: hidden;
+      //     transition: all 0.5s ease;
+      // }
 
-        & .fade-out {
-            display: none;
-        }
+      // &:hover::after {
+      //     max-width: 100%;
+      // }
     }
-
-    &__toggle {
-        z-index: 2;
-        margin-right: 2rem;
-        >span {
-            display: block;
-            width: 2.5rem;
-            height: 0.2rem;
-            background-color: $grey;
-            transition: all 250ms ease-in-out;
-            transform-origin: 0.25rem 0.1rem;
-            // transform origin is for the effect of turning it into an X 
-    
-            &:not(:last-child){
-                // This adds a margin bottom to all the spans except the last one 
-                margin-bottom: 0.5rem;
-            }
-        }
-         
-    }
-    // Desktop Menu starts
-
-    nav {
-        padding-top: 2rem ;
-        padding-bottom: 2rem ;
-
-    }
-
-    &__logo {
-        margin-left: 7%;
-        @include breakpoint-up(large){
-            margin-left: 0;
-        }
-        >img {
-            max-width: 12.5rem;
-            height: auto;
-        }
-    }
-
-    &__links {
-
-        & >ul {
-            list-style-type: none;
-            
-            & >li {
-                display: inline-block;
-                list-style: outside none none;
-                margin: 0 1.5em;
-                padding: 0;
-             }
-        }
-
-        
-
-        a {
-            padding: 0.5em 0;
-            color: $grey;
-            position: relative;
-            letter-spacing: 0.1rem;
-            text-decoration: none;
-            font-size: $font-small;
-            transition: all 250ms ease-in-out;
-
-            &:hover {
-                color: $golden;
-            }
-
-            &:active {
-                color: $golden;
-            }
-            
-
-            &::before {
-                 // This one is for the line that goes bellow it 
-                position: absolute;
-                left: 0;
-                // left: 50%;
-                // transform: translate(-50%, 0);
-                // In case I want it to start from the middle, the one above works 
-                bottom: 0;
-                display: block;
-                height: 0.4rem;
-                width: 0%;
-                content: "";
-                background-color: $golden;
-                transition: all 0.5s ease;
-            }
-            &:hover::before, :active::before, :focus::before {
-                opacity: 1;
-                width: 35%;
-            }
-
-            // &::after {
-            //     // This effect gives a progressive hover using data hover attributes
-            //     position: absolute;
-            //     left: 0;
-            //     content: attr(data-hover);
-            //     color: $golden;
-            //     white-space: nowrap;
-            //     max-width: 0%;
-            //     overflow: hidden;
-            //     transition: all 0.5s ease;
-            // }
-
-            // &:hover::after {
-            //     max-width: 100%;
-            // }
-        }
-    }
-    // Desktop Ends
-
-    
-
-}   
-
-
+  }
+  // Desktop Ends
+}
